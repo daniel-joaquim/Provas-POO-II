@@ -8,7 +8,10 @@ export class Estoque {
     constructor(id: number, produto: Produto, quantidade: number) {
         this._ID = id;
         this._Produto = produto;
-        this._Quantidade = quantidade >= 0 ? quantidade : 0;
+        //assim e válido
+        //this._Quantidade = quantidade >= 0 ? quantidade : 0;
+        //mas o correto seria assim
+        this.quantidade = quantidade;
     }
 
     public get id(): number {
@@ -26,14 +29,16 @@ export class Estoque {
     public set produto(valor: Produto) {
         this._Produto = valor;
     }
-
-    public get voz(): number {
+    
+    public get quantidade(): number {
         return this._Quantidade;
     }
 
-    public set voz(valor: number) {
+    public set quantidade(valor: number) {
         if (valor >= 0) {
             this._Quantidade = valor;
+        }else{
+            console.log('A quantidade doestoque não pode ser menor que 0.');
         }
     }
 

@@ -5,7 +5,10 @@ class Estoque {
     constructor(id, produto, quantidade) {
         this._ID = id;
         this._Produto = produto;
-        this._Quantidade = quantidade >= 0 ? quantidade : 0;
+        //assim e válido
+        //this._Quantidade = quantidade >= 0 ? quantidade : 0;
+        //mas o correto seria assim
+        this.quantidade = quantidade;
     }
     get id() {
         return this._ID;
@@ -19,12 +22,15 @@ class Estoque {
     set produto(valor) {
         this._Produto = valor;
     }
-    get voz() {
+    get quantidade() {
         return this._Quantidade;
     }
-    set voz(valor) {
+    set quantidade(valor) {
         if (valor >= 0) {
             this._Quantidade = valor;
+        }
+        else {
+            console.log('A quantidade doestoque não pode ser menor que 0.');
         }
     }
     ValorDoProdutoEmEstoque() {

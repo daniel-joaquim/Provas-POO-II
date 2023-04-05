@@ -8,8 +8,17 @@ console.log(fornecedor1);
 let produto1 = new Produto(167, 'Colher longa', fornecedor1, 20.90);
 console.log(produto1);
 
+//Provando que a validação do valor do produto funciona
+let produto2 = new Produto(167, 'Colher longa', fornecedor1, -20.90);
+console.log(produto2);
+
+
 let estoque1 = new Estoque(45, produto1, 80);
 console.log(estoque1);
+
+// prova que a validação funciona
+let estoque2 = new Estoque(45, produto1, -80);
+console.log(estoque2);
 
 estoque1.ValorDoProdutoEmEstoque();
 

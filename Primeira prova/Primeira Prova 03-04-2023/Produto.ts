@@ -10,7 +10,10 @@ export class Produto {
         this._ID = id;
         this._Descricao = descricao;
         this._Fornecedor = fornecedor;
-        this._ValorUnitario = ValorUnitario;
+        // assim já e válido
+        //this._ValorUnitario = ValorUnitario > 0 ? ValorUnitario : 1 ;
+        // mas o coreto seria assim
+        this.ValorUnitario = ValorUnitario;
     }
 
     get ID(): number {
@@ -35,9 +38,12 @@ export class Produto {
 
     set ValorUnitario(valorUnitario: number) {
         if (valorUnitario <= 0) {
-            throw new Error('O valor de cada unidade não pode ser menor ou igual a zero.');
+            // deixei comentado pra poder testar todo codigo de uma vez so
+            //throw new Error('O valor de cada unidade não pode ser menor ou igual a zero.');
+            console.log('O valor de cada unidade não pode ser menor ou igual a zero.');
+        } else {
+            this._ValorUnitario = valorUnitario;
         }
-        this._ValorUnitario = valorUnitario;
     }
 
     get ValorUnitario(): number {
