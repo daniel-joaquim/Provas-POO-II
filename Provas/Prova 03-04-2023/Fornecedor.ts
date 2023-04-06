@@ -19,41 +19,39 @@ export class Fornecedor {
         return this._ID;
     }
 
-    set id(value: number) {
-        this._ID = value;
+    set id(id: number) {
+        this._ID = id;
     }
 
     get nome(): string {
         return this._Nome_RazaoSocial;
     }
 
-    set nome(value: string) {
-        this._Nome_RazaoSocial = value;
+    set nome(nome: string) {
+        this._Nome_RazaoSocial = nome;
     }
 
     get cpf(): string {
         return this._CPF_CNPJ;
     }
 
-    set cpf(value: string) {
-        this._CPF_CNPJ = value;
+    set cpf(cpf: string) {
+        this._CPF_CNPJ = cpf;
     }
 
     get telefone(): string {
         return this._Telefone;
     }
 
-    set telefone(value: string) {
-        this._Telefone = value;
+    set telefone(telefone: string) {
+        this._Telefone = telefone;
     }
 
     get endereco(): string {
         return this._Endereco;
     }
 
-    set endereco(value: string) {
-        this._Endereco = value;
+    set endereco(endereco: string) {
+        this._Endereco = endereco;
     }
 }
-let fornecedor1 = new Fornecedor(1, 'Strawplast', "02.591.442/0001-85", "(48) 3657-8000", "Rua Augusto Becker, 1132");
-console.log(fornecedor1);

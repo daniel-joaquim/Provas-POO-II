@@ -3,14 +3,11 @@ import { Produto } from "./Produto";
 export class Estoque {
     private _ID: number;
     private _Produto: Produto;
-    private _Quantidade: number;
+    public _Quantidade: number;
 
     constructor(id: number, produto: Produto, quantidade: number) {
         this._ID = id;
         this._Produto = produto;
-        //assim e válido
-        //this._Quantidade = quantidade >= 0 ? quantidade : 0;
-        //mas o correto seria assim
         this.quantidade = quantidade;
     }
 
@@ -18,31 +15,31 @@ export class Estoque {
         return this._ID;
     }
 
-    public set id(valor: number) {
-        this._ID = valor;
+    public set id(id: number) {
+        this._ID = id;
     }
 
     public get produto(): Produto {
         return this._Produto;
     }
 
-    public set produto(valor: Produto) {
-        this._Produto = valor;
+    public set produto(produto: Produto) {
+        this._Produto = produto;
     }
     
     public get quantidade(): number {
         return this._Quantidade;
     }
 
-    public set quantidade(valor: number) {
-        if (valor >= 0) {
-            this._Quantidade = valor;
+    public set quantidade(quantidade: number) {
+        if (quantidade >= 0) {
+            this._Quantidade = quantidade;
         }else{
-            console.log('A quantidade doestoque não pode ser menor que 0.');
+            throw new Error ('A quantidade do estoque não pode ser menor que 0.');
         }
     }
 
     public ValorDoProdutoEmEstoque() {
-        console.log(this._Produto._ValorUnitario * this._Quantidade);
+        console.log(this._Produto.valorUnitario * this.quantidade);
     }
 }

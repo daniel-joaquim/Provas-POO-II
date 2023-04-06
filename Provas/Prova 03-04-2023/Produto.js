@@ -2,14 +2,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Produto = void 0;
 class Produto {
+    _ID;
+    _Descricao;
+    _Fornecedor;
+    _valorUnitario;
     constructor(id, descricao, fornecedor, ValorUnitario) {
         this._ID = id;
         this._Descricao = descricao;
         this._Fornecedor = fornecedor;
-        // assim já e válido
-        //this._ValorUnitario = ValorUnitario > 0 ? ValorUnitario : 1 ;
-        // mas o coreto seria assim
-        this.ValorUnitario = ValorUnitario;
+        this.valorUnitario = ValorUnitario;
     }
     get ID() {
         return this._ID;
@@ -26,18 +27,16 @@ class Produto {
     get Fornecedor() {
         return this._Fornecedor;
     }
-    set ValorUnitario(valorUnitario) {
-        if (valorUnitario <= 0) {
-            // deixei comentado pra poder testar todo codigo de uma vez so
-            //throw new Error('O valor de cada unidade não pode ser menor ou igual a zero.');
-            console.log('O valor de cada unidade não pode ser menor ou igual a zero.');
+    set valorUnitario(ValorUnitario) {
+        if (ValorUnitario <= 0) {
+            throw new Error('O valor de cada unidade não pode ser menor ou igual a zero.');
         }
         else {
-            this._ValorUnitario = valorUnitario;
+            this._valorUnitario = ValorUnitario;
         }
     }
-    get ValorUnitario() {
-        return this._ValorUnitario;
+    get valorUnitario() {
+        return this._valorUnitario;
     }
 }
 exports.Produto = Produto;

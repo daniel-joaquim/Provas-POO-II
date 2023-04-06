@@ -2,39 +2,39 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Estoque = void 0;
 class Estoque {
+    _ID;
+    _Produto;
+    _Quantidade;
     constructor(id, produto, quantidade) {
         this._ID = id;
         this._Produto = produto;
-        //assim e válido
-        //this._Quantidade = quantidade >= 0 ? quantidade : 0;
-        //mas o correto seria assim
         this.quantidade = quantidade;
     }
     get id() {
         return this._ID;
     }
-    set id(valor) {
-        this._ID = valor;
+    set id(id) {
+        this._ID = id;
     }
     get produto() {
         return this._Produto;
     }
-    set produto(valor) {
-        this._Produto = valor;
+    set produto(produto) {
+        this._Produto = produto;
     }
     get quantidade() {
         return this._Quantidade;
     }
-    set quantidade(valor) {
-        if (valor >= 0) {
-            this._Quantidade = valor;
+    set quantidade(quantidade) {
+        if (quantidade >= 0) {
+            this._Quantidade = quantidade;
         }
         else {
-            console.log('A quantidade doestoque não pode ser menor que 0.');
+            throw new Error('A quantidade do estoque não pode ser menor que 0.');
         }
     }
     ValorDoProdutoEmEstoque() {
-        console.log(this._Produto._ValorUnitario * this._Quantidade);
+        console.log(this._Produto.valorUnitario * this.quantidade);
     }
 }
 exports.Estoque = Estoque;
