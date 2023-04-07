@@ -35,7 +35,7 @@ export class Produto {
 
     set valorUnitario(ValorUnitario: number) {
         if (ValorUnitario <= 0) {
-           throw new Error('O valor de cada unidade não pode ser menor ou igual a zero.');
+            throw new Error('O valor de cada unidade não pode ser menor ou igual a zero.');
         } else {
             this._valorUnitario = ValorUnitario;
         }

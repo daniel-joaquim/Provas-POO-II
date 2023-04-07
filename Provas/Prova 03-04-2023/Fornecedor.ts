@@ -5,7 +5,7 @@ export class Fornecedor {
     private _CPF_CNPJ: string;
     private _Telefone: string;
     private _Endereco: string;
-    
+
 
     constructor(id: number, nome: string, cpf: string, telefone: string, endereco: string) {
         this._ID = id;

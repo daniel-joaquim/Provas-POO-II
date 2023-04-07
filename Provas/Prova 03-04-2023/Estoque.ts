@@ -26,7 +26,7 @@ export class Estoque {
     public set produto(produto: Produto) {
         this._Produto = produto;
     }
-    
+
     public get quantidade(): number {
         return this._Quantidade;
     }
@@ -34,8 +34,8 @@ export class Estoque {
     public set quantidade(quantidade: number) {
         if (quantidade >= 0) {
             this._Quantidade = quantidade;
-        }else{
-            throw new Error ('A quantidade do estoque não pode ser menor que 0.');
+        } else {
+            throw new Error('A quantidade do estoque não pode ser menor que 0.');
         }
     }
 
