@@ -18,7 +18,6 @@ console.log(produto2);
 //Prova que a validação funciona
 let estoque2 = new Estoque(45, produto2, -80);
 console.log(estoque2);
-
 estoque2.ValorDoProdutoEmEstoque();
 
 
