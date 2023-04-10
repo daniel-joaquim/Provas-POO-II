@@ -30,7 +30,12 @@ class Estoque {
             this._Quantidade = quantidade;
         }
         else {
-            throw new Error('A quantidade do estoque não pode ser menor que 0.');
+            try {
+                throw new Error('A quantidade do estoque não pode ser menor que 0.');
+            }
+            catch (e) {
+                console.error(e.message);
+            }
         }
     }
     ValorDoProdutoEmEstoque() {
