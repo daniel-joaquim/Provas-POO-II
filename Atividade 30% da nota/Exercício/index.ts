@@ -13,7 +13,7 @@ const caminhao2 = new Caminhao('JKL-3456', 'Volvo', 'FH16', 'Diesel');
 const ordem1 = new OrdemCombustivel(carro1, 0, new Date(), 1);
 const ordem2 = new OrdemCombustivel(carro2, 90, new Date(), 2);
 const ordem3 = new OrdemCombustivel(caminhao1, 100, new Date(), 3);
-const ordem4 = new OrdemCombustivel(caminhao2, 440, new Date(), 4);
+const ordem4 = new OrdemCombustivel(caminhao2, 441, new Date(), 4);
 
 // criando instância do controle de ordens de combustível
 const controle = new ControleOrdemCombustivel();

@@ -23,7 +23,7 @@ class OrdemCombustivel {
         return this._qtdLitros;
     }
     set qtdLitros(qtdLitros) {
-        if (qtdLitros < this.veiculo.tanqueLitrosMax) {
+        if (qtdLitros <= this.veiculo.tanqueLitrosMax) {
             this._qtdLitros = qtdLitros;
         }
     }
