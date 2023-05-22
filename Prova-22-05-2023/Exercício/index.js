@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const carros_1 = require("./carros");
+const motos_1 = require("./motos");
+const caminhoes_1 = require("./caminhoes");
+const carro1 = new carros_1.Carro(120);
+const moto1 = new motos_1.Moto(103);
+const caminhao1 = new caminhoes_1.Caminhao(80);
+carro1.verificarVelocidade();
+moto1.verificarVelocidade();
+caminhao1.verificarVelocidade();
